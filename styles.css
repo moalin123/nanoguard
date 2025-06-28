@@ -1,0 +1,159 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f4f1; /* Light earthy background */
+  color: #2e2e2e;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header hero */
+header.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3a5a40 0%, #a3b18a 100%);
+  color: #e9f1df;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem 5rem;
+  position: relative;
+  box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+header.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255 255 255 / 0.3);
+}
+header.hero p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Bottom shape under hero */
+header.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #6a8e63; /* darker earthy green */
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+/* Button */
+a.btn {
+  display: inline-block;
+  background: #e9f1df;
+  color: #3a5a40;
+  padding: 0.8rem 2.5rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 5px 15px rgba(58, 90, 64, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+a.btn:hover {
+  background: #6a8e63;
+  color: #f2f4f1;
+  box-shadow: 0 8px 25px rgba(106, 142, 99, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+  max-width: 720px;
+  margin: 5rem auto;
+  padding: 2rem 2rem 3rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+section h2 {
+  color: #3a5a40;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+}
+section p, section ul {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+section ul li {
+  margin-bottom: 0.8rem;
+}
+
+/* Footer */
+footer {
+  background: #3a5a40;
+  color: #e9f1df;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  user-select: none;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* AOS fade-up animation overrides */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 600ms;
+}
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#insta-link img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 8px;
+    cursor:pointer;
+    filter: invert(0.3);
+    transition: filter 0.3s ease;
+}
+#insta-link img:hover {
+    filter: invert(0.7)
+}
+/* Responsive */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2.5rem;
+  }
+  section {
+    margin: 3rem 1rem;
+  }
+}
